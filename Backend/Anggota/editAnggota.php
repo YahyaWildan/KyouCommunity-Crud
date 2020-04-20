@@ -2,7 +2,7 @@
 <?php
     include("../../Connect.php");
 
-    if (isset($_POST['update'])) {
+    if (isset($_POST['submit'])) {
         $id_anggota = $_POST['id_anggota'];
 
         $nama_lengkap=$_POST['nama_lengkap'];

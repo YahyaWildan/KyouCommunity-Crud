@@ -1,7 +1,7 @@
 <?php
 include_once("../../Config.php");
     if(isset($_POST['submit'])){
-        $id_admin = $_POST['id_admin'];
+        $id_admin = $_GET['id_admin'];
         $nama_lengkap = $_POST['nama_lengkap'];
         $username = $_POST['username'];
         $password = $_POST['password'];
