@@ -211,7 +211,7 @@
                       $idx = 1;
                       while ($admin = $admins->fetch_array()) {
                         $btnEdit = "<a class='btn btn-sm btn-primary mx-1' href='edit.php?id_admin=".$admin['id_admin']."'>edit</a>";
-                        $btnDelete = "<form class='d-inline' action='/KyouCommunity/Backend/Admin/deleteAdmin.php?id=".$admin['id_admin']."' method='post'><input type='submit' name='delete' class='btn btn-sm btn-danger' value='hapus'/></form>";
+                        $btnDelete = "<form class='d-inline' action='/KyouCommunity/Backend/Admin/deleteAdmin.php?id_admin=".$admin['id_admin']."'method='post'><input type='submit' name='delete' class='btn btn-sm btn-danger' value='hapus'/></form>";
                         $action = $btnEdit.$btnDelete;
                         echo "<tr class='text-center'>";                         
                           echo "<td>".ucwords($admin['id_admin'])."</td>";
