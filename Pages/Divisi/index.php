@@ -193,9 +193,9 @@
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                  <thead class="text-center">
                     <tr>
-                        <th>id</th>
+                        <th>No</th>
                         <th>Nama Divisi</th>
                         <th>Ketua </th>
                         <th>Deskripsi</th>
@@ -207,11 +207,11 @@
                     <?php
                       $idx = 1;
                       while ($divisi = $divisis->fetch_array()) {
-                        $btnEdit = "<a class='btn btn-sm btn-primary mx-1' href='edit.php?id=".$divisi['id_divisi']."'>edit</a>";
-                        $btnDelete = "<form class='d-inline' action='/KyouCommunity/Backend/Divisi/deleteDivisi.php?id=".$divisi['id_divisi']."' method='post'><input type='submit' name='delete' class='btn btn-sm btn-danger' value='hapus'/></form>";
+                        $btnEdit = "<a class='btn btn-sm btn-primary mx-1' href='edit.php?id_divisi=".$divisi['id_divisi']."'>edit</a>";
+                        $btnDelete = "<form class='d-inline' action='/KyouCommunity/Backend/Divisi/deleteDivisi.php?id_divisi=".$divisi['id_divisi']."' method='post'><input type='submit' name='delete' class='btn btn-sm btn-danger' value='hapus'/></form>";
                         $action = $btnEdit.$btnDelete;
                         echo "<tr class='text-center'>";                         
-                          echo "<td>".ucwords($divisi['id_divisi'])."</td>";
+                          echo "<td>".ucwords($idx)."</td>";
                           echo "<td>".ucwords($divisi['nama_divisi'])."</td>";
                           echo "<td>".ucwords($divisi['ketua_divisi'])."</td>";
                           echo "<td>".ucwords($divisi['deskripsi'])."</td>";

@@ -244,11 +244,11 @@
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Alamat</label>
-                    <textarea class="form-control" name="alamat" value="<?php echo $alamat;?>"></textarea>
+                    <textarea class="form-control" name="alamat" ><?php echo $alamat;?></textarea>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Foto</label>
-                    <input class="form-control" type="text" name="foto"  value="<?php echo $foto;?>"required>
+                    <input class="form-control" type="text" name="foto"value="<?php echo $foto;?>"required>
                   </div>
                   <div class="form-group text-right">
                   <a class='btn btn-sm btn-warning mx-1' href="index.php">Cancel</a>
