@@ -1,7 +1,16 @@
 <?php
     include('../../Backend/Anggota/showAnggota.php');
     $id_anggota = $_GET['id_anggota'];
-    $anggota = $conn->query("SELECT * FROM anggota WHERE id_anggota=$id_anggota")->fetch_assoc();
+    $sql = mysqli_query($conn,"SELECT * FROM anggota WHERE id_anggota=$id_anggota");
+    while($data = mysqli_fetch_array($sql)){
+      $nama_lengkap=$data['nama_lengkap'];
+      $username=$data['username'];
+      $email=$data['email'];
+      $password=$data['password'];
+      $id_telegram=$data['id_telegram'];
+      $alamat=$data['alamat'];
+      $foto=$data['foto'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -208,38 +217,38 @@
             <!-- general form elements disabled -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tambah Anggota</h3>
+                <h3 class="card-title">Edit Anggota</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <form action="/KyouCommunity/Backend/Anggota/editAnggota.php?id_anggota=<?= $_GET['id_anggota'] ?>" method="post">
                   <div class="form-group">
                     <label class="form-label" for="">Nama Lengkap</label>
-                    <input class="form-control" type="text" name="nama_lengkap" required>
+                    <input class="form-control" type="text" name="nama_lengkap" value="<?php echo $nama_lengkap;?>"required>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Username</label>
-                    <input class="form-control" type="text" name="username" required>
+                    <input class="form-control" type="text" name="username" value="<?php echo $username;?>" required>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Email</label>
-                    <input class="form-control" type="email" name="email" required>
+                    <input class="form-control" type="email" name="email" value="<?php echo $email;?>" required>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Password</label>
-                    <input class="form-control" type="password" name="password" required>
+                    <input class="form-control" type="password" name="password"  value="<?php echo $password;?>"required>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Id telegram</label>
-                    <input class="form-control" type="text" name="id_telegram" required>
+                    <input class="form-control" type="text" name="id_telegram"  value="<?php echo $id_telegram;?>"required>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Alamat</label>
-                    <textarea class="form-control" name="alamat"></textarea>
+                    <textarea class="form-control" name="alamat" value="<?php echo $alamat;?>"></textarea>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Foto</label>
-                    <input class="form-control" type="text" name="foto" required>
+                    <input class="form-control" type="text" name="foto"  value="<?php echo $foto;?>"required>
                   </div>
                   <div class="form-group text-right">
                   <a class='btn btn-sm btn-warning mx-1' href="index.php">Cancel</a>

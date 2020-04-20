@@ -195,9 +195,9 @@ include('../../Backend/Anggota/showAnggota.php');
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                  <thead class="text-center">
                     <tr>
-                      <th>id</th>
+                      <th>No</th>
                       <th>foto</th>
                       <th>Nama</th>
                       <th>Username</th>
@@ -212,10 +212,10 @@ include('../../Backend/Anggota/showAnggota.php');
                     $idx = 1;
                     while ($anggota = $anggotas->fetch_array()) {
                       $btnEdit = "<a class='btn btn-sm btn-primary mx-1' href='edit.php?id_anggota=".$anggota['id_anggota']."'>edit</a>";
-                      $btnDelete = "<form class='d-inline' action='/KyouCommunity/Backend/Anggota/deleteAnggota.php?id_anggota=" . $anggota['id_anggota'] . "' method='post'><input type='submit' name='delete' class='btn btn-sm btn-danger' value='hapus'/></form>";
+                      $btnDelete = "<form class='d-inline' action='/KyouCommunity/Backend/Anggota/deleteAnggota.php?id_anggota=".$anggota['id_anggota']."' method='post'><input type='submit' name='delete' class='btn btn-sm btn-danger' value='hapus'/></form>";
                       $action = $btnEdit . $btnDelete;
                       echo "<tr class='text-center'>";
-                      echo "<td>" . ucwords($anggota['id_anggota']) . "</td>";
+                      echo "<td>" . ucwords($idx) . "</td>";
                       echo "<td>" . ucwords($anggota['foto']) . "</td>";
                       echo "<td>" . ucwords($anggota['nama_lengkap']) . "</td>";
                       echo "<td>" . ucwords($anggota['username']) . "</td>";

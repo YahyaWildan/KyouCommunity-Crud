@@ -195,9 +195,9 @@
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                  <thead class="text-center">
                     <tr>
-                        <th>id</th>
+                        <th>No</th>
                         <th>Foto</th>
                         <th>Nama </th>
                         <th>Username</th>
@@ -214,7 +214,7 @@
                         $btnDelete = "<form class='d-inline' action='/KyouCommunity/Backend/Admin/deleteAdmin.php?id_admin=".$admin['id_admin']."'method='post'><input type='submit' name='delete' class='btn btn-sm btn-danger' value='hapus'/></form>";
                         $action = $btnEdit.$btnDelete;
                         echo "<tr class='text-center'>";                         
-                          echo "<td>".ucwords($admin['id_admin'])."</td>";
+                          echo "<td>".ucwords($idx)."</td>";
                           echo "<td>".ucwords($admin['foto'])."</td>";
                           echo "<td>".ucwords($admin['nama_lengkap'])."</td>";
                           echo "<td>".ucwords($admin['username'])."</td>";
