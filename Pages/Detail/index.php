@@ -1,16 +1,8 @@
 <?php
-    include('../../Backend/Admin/showAdmin.php');
-    $id_admin = $_GET['id_admin'];
-    // $sql = $conn->query("SELECT * FROM admin WHERE id_admin=$id_admin")->fetch_assoc();
-    $sql = mysqli_query($conn,"SELECT * FROM admin WHERE id_admin=$id_admin");
-    while($admin_data=mysqli_fetch_array($sql)){
-      $nama_lengkap=$admin_data['nama_lengkap'];
-      $password = $admin_data['password'];
-      $username =$admin_data['username'];
-      $id_telegram=$admin_data['id_telegram'];
-      $foto=$admin_data['foto'];
-    }
-    
+    include('../../Backend/Divisi/showDivisi.php');
+    $sql  = mysqli_query($conn,'SELECT a.nama_lengkap,a.username,a.id_telegram,d.nama_divisi,ad.status FROM anggota_divisi AS ad JOIN anggota AS a ON ad.id_anggota=a.id_anggota JOIN divisi AS d ON ad.id_divisi=d.id_divisi');
+    $dra = mysqli_fetch_array($sql);  
+    // var_dump($dra);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Tables</title>
+  <title>KM - Divisi</title>
 
   <!-- Custom fonts for this template -->
   <link href="../../Asset/Dasboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -33,25 +25,7 @@
   <link href="../../Asset/Dasboard/css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
-
   <link href="../../Asset/Dasboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-  <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="../../Asset/Login/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../../Asset/Login/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../../Asset/Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../../Asset/Login/vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="../../Asset/Login/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../../Asset/Login/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../../Asset/Login/css/util.css">
-	<link rel="stylesheet" type="text/css" href="../../Asset/Login/css/main.css">
-<!--===============================================================================================-->
 
 </head>
 
@@ -73,6 +47,8 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
+
+     
       <!-- Heading -->
       <div class="sidebar-heading">
         Addons
@@ -94,10 +70,8 @@
       </li>
 
  
-
-  
       <!-- Nav Item - Tables -->
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="../Admin/index.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Admin</span></a>
@@ -112,7 +86,7 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Divisi</span></a>
       </li>
-      <li class="nav-item ">
+      <li class="nav-item active  ">
         <a class="nav-link" href="../Detail/index.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Detail Anggota</span></a>
@@ -200,7 +174,7 @@
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="../../logout.php" >
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -213,62 +187,67 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- right column -->
-          <div class="col-md-8 mx-auto">
-            <!-- general form elements disabled -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Edit Admin</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <form action="/KyouCommunity/Backend/Admin/editAdmin.php?id_admin=<?= $_GET['id_admin'] ?>" method="post">
-                  <div class="form-group">
-                    <label class="form-label" for="">Nama</label>
-                    <input class="form-control" type="text" name="nama_lengkap" value="<?php echo $nama_lengkap;?>"  required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="">Password</label>
-                    <input class="form-control" type="password" name="password" value="<?php echo $password;?>" required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="">username</label>
-                    <input class="form-control" type="text" name="username" value="<?php echo $username;?>" required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="">Id telegram</label>
-                    <input class="form-control" type="text" name="id_telegram" value="<?php echo $id_telegram;?> " required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="">foto</label>
-                    <input class="form-control" type="text" name="foto" value="<?php echo $foto;?>" required>
-                  </div>
+        <div class="container-fluid">
 
-                  <div class="form-group text-right">
-                  <a class='btn btn-sm btn-warning mx-1' href="index.php">Cancel</a>
-                    <input class="btn btn-success" type="submit" name="submit" value="Submit" />
-                  </div>
-                </form>
-              </div>
-              <!-- /.card-body -->
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Divisi</h1>
+          <p class="mb-4">Daftar Divisi</p>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+            <a class='btn btn-sm btn-success mx-1' href="create.php">Tambah Divisi</a>
             </div>
-            <!-- /.card -->
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="text-center">
+                    <tr>
+                        <th>No</th>
+                        <th>Nama </th>
+                        <th>Username </th>
+                        <th>Id Telegram</th>
+                        <th>Nama Divisi</th>
+                        <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                      $idx = 1;
+                      while ($divisi = $divisis->fetch_array()) {
+                        // $btnEdit = "<a class='btn btn-sm btn-primary mx-1' href='edit.php?id_divisi=".$divisi['id_divisi']."'>edit</a>";
+                        // $btnDelete = "<form class='d-inline' action='/KyouCommunity/Backend/Divisi/deleteDivisi.php?id_divisi=".$divisi['id_divisi']."' method='post'><input type='submit' name='delete' class='btn btn-sm btn-danger' value='hapus'/></form>";
+                        // $action = $btnEdit.$btnDelete;
+                        echo "<tr class='text-center'>";                         
+                          echo "<td>".ucwords($idx)."</td>";
+                          echo "<td>".ucwords($dra['nama_lengkap'])."</td>";
+                          echo "<td>".ucwords($dra['username'])."</td>";
+                          echo "<td>".ucwords($dra['id_telegram'])."</td>";
+                          echo "<td>".ucwords($dra['nama_divisi'])."</td>";
+                          if($dra['status']==1){
+                            echo "<td>".ucwords("Aktif")."</td>";
+                          }else if($dra['status']==0){
+                            echo "<td>".ucwords("Tidak Aktif")."</td>";                            
+                          }
+                          // echo "<td>$action</td>";
+                        echo "</tr>";
+                        $idx++;
+                      }
+                    ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <!--/.col (right) -->
+
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
         <!-- /.container-fluid -->
 
       </div>
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white mt-5">
+      <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Your Website 2019</span>
@@ -323,23 +302,6 @@
 
   <!-- Page level custom scripts -->
   <script src="../../Asset/Dasboard/js/demo/datatables-demo.js"></script>
-
-  <!--===============================================================================================-->	
-	<script src="../../Asset/Login/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../../Asset/Login/vendor/bootstrap/js/popper.js"></script>
-	<script src="../../Asset/Login/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../../Asset/Login/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../../Asset/Login/vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="../../Asset/Login/js/main.js"></script>
 
 </body>
 

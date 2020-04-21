@@ -84,6 +84,11 @@ include('../../Backend/Anggota/showAnggota.php');
           <i class="fas fa-fw fa-table"></i>
           <span>Divisi</span></a>
       </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="../Detail/index.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Detail Anggota</span></a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

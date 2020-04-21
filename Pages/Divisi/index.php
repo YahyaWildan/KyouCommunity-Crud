@@ -1,5 +1,8 @@
 <?php
     include('../../Backend/Divisi/showDivisi.php');
+    $sql  = mysqli_query($conn,'SELECT a.nama_lengkap FROM divisi AS d JOIN admin AS a ON d.id_admin=a.id_admin');
+    $dra = mysqli_fetch_array($sql);  
+    // var_dump($dra);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,6 +85,11 @@
         <a class="nav-link" href="../Divisi/index.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Divisi</span></a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="../Detail/index.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Detail Anggota</span></a>
       </li>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -199,7 +207,7 @@
                         <th>Nama Divisi</th>
                         <th>Ketua </th>
                         <th>Deskripsi</th>
-                        <th>id Admin</th>
+                        <th>Nama Admin</th>
                         <th>Action</th>
                     </tr>
                   </thead>
@@ -215,7 +223,7 @@
                           echo "<td>".ucwords($divisi['nama_divisi'])."</td>";
                           echo "<td>".ucwords($divisi['ketua_divisi'])."</td>";
                           echo "<td>".ucwords($divisi['deskripsi'])."</td>";
-                          echo "<td>".ucwords($divisi['id_admin'])."</td>";
+                          echo "<td>".ucwords($dra['nama_lengkap'])."</td>";
                           echo "<td>$action</td>";
                         echo "</tr>";
                         $idx++;
