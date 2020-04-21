@@ -1,5 +1,12 @@
 <?php
     include('../../Backend/Divisi/showDivisi.php');
+    $id_divisi = $_GET['id_divisi'];
+    $sql = mysqli_query($conn,"SELECT * FROM divisi WHERE id_divisi=$id_divisi");
+    while($data = mysqli_fetch_array($sql)){
+      $nama_divisi=$data['nama_divisi'];
+      $ketua_divisi=$data['ketua_divisi'];
+      $deskripsi=$data['deskripsi'];
+    }
     
 ?>
 <!DOCTYPE html>
@@ -212,18 +219,18 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form action="/KyouCommunity/Backend/Divisi/addDivisi.php?id_divisi=<?= $_GET['id_divisi'] ?>" method="post">
+                <form action="/KyouCommunity/Backend/Divisi/editDivisi.php?id_divisi=<?= $_GET['id_divisi'] ?>" method="post">
                   <div class="form-group">
                     <label class="form-label" for="">Nama Divisi</label>
-                    <input class="form-control" type="text" name="nama_divisi" required>
+                    <input class="form-control" type="text" name="nama_divisi" value="<?php echo $nama_divisi; ?>" required>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Ketua Divisi</label>
-                    <input class="form-control" type="text" name="ketua_divisi" required>
+                    <input class="form-control" type="text" name="ketua_divisi" value="<?php echo $ketua_divisi; ?>" required>
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Deskripsi</label>
-                    <textarea class="form-control" name="deskripsi"></textarea>
+                    <textarea class="form-control" name="deskripsi"><?php echo $nama_divisi; ?></textarea>
                   </div>
                   <div class="form-group text-right">
                   <a class='btn btn-sm btn-warning mx-1' href="index.php">Cancel</a>
