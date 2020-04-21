@@ -1,12 +1,9 @@
 
 <?php
     include("../../Config.php");
-
     $nama_divisi = $_POST['nama_divisi'];
     $ketua_divisi = $_POST['ketua_divisi'];
     $deskripsi = $_POST['deskripsi'];
- 
-
     $sql = "INSERT INTO divisi(nama_divisi,ketua_divisi,deskripsi) VALUES('$nama_divisi','$ketua_divisi','$deskripsi')";
     $query = mysqli_query($conn, $sql);
     if($query){

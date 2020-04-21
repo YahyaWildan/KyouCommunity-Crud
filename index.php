@@ -50,7 +50,7 @@
 		</div>
 		<ul class="main-menu">
 			<li><a class="navbar-brand font-weight-bold ml-0" href="index.html">Kyou Community</a></li>
-			<li><a href="index.html">Home</a></li>
+			<li><a href="#">Home</a></li>
 			<li><a href="#about">About</a></li>
 			<li><a href="#">Divisi</a>
 				<ul class="sub-menu">
@@ -93,7 +93,7 @@
 							<div class="hs-text">
 								<h2><span>Zero </span> to Hero.</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
-								<a href="#" class="site-btn">Join</a>
+								<a href="Pages/Login/regis.php" class="site-btn">Join</a>
 								<a href="#" class="site-btn sb-c2">Lets Go</a>
 							</div>
 						</div>

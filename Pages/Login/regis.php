@@ -62,10 +62,10 @@
                     <label class="form-label" for="">Alamat</label>
                     <textarea class="form-control" name="alamat"></textarea>
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label class="form-label" for="">Foto</label>
                     <input class="form-control" type="text" name="foto" required>
-                  </div>
+                  </div> -->
                   <div class="form-group text-right">
                   <a class='btn btn-sm btn-warning mx-1' href="../../index.php">Cancel</a>
                     <input class="btn btn-success" type="submit" name="submit" value="Submit" />

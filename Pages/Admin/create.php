@@ -234,10 +234,6 @@
                     <label class="form-label" for="">Id telegram</label>
                     <input class="form-control" type="text" name="id_telegram" required>
                   </div>
-                  <div class="form-group">
-                    <label class="form-label" for="">foto</label>
-                    <input class="form-control" type="text" name="foto" required>
-                  </div>
 
                   <div class="form-group text-right">
                   <a class='btn btn-sm btn-warning mx-1' href="index.php">Cancel</a>

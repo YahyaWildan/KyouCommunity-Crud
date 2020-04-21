@@ -235,7 +235,7 @@
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="">Deskripsi</label>
-                    <textarea class="form-control" name="deskripsi"><?php echo $nama_divisi; ?></textarea>
+                    <textarea class="form-control" name="deskripsi"><?php echo $deskripsi; ?></textarea>
                   </div>
                   <div class="form-group text-right">
                   <a class='btn btn-sm btn-warning mx-1' href="index.php">Cancel</a>

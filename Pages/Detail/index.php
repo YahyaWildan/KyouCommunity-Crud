@@ -190,14 +190,14 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Divisi</h1>
-          <p class="mb-4">Daftar Divisi</p>
+          <h1 class="h3 mb-2 text-gray-800">Detail Anggota</h1>
+          <!-- <p class="mb-4">Daftar Divisi</p> -->
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
-            <div class="card-header py-3">
+            <!-- <div class="card-header py-3">
             <a class='btn btn-sm btn-success mx-1' href="create.php">Tambah Divisi</a>
-            </div>
+            </div> -->
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

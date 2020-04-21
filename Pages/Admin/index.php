@@ -203,7 +203,7 @@
                   <thead class="text-center">
                     <tr>
                         <th>No</th>
-                        <th>Foto</th>
+                        <!-- <th>Foto</th> -->
                         <th>Nama </th>
                         <th>Username</th>
                         <th>Id telegram</th>
@@ -220,7 +220,7 @@
                         $action = $btnEdit.$btnDelete;
                         echo "<tr class='text-center'>";                         
                           echo "<td>".ucwords($idx)."</td>";
-                          echo "<td>".ucwords($admin['foto'])."</td>";
+                          // echo "<td>".ucwords($admin['foto'])."</td>";
                           echo "<td>".ucwords($admin['nama_lengkap'])."</td>";
                           echo "<td>".ucwords($admin['username'])."</td>";
                           echo "<td>".ucwords($admin['id_telegram'])."</td>";

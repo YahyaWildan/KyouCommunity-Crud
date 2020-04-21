@@ -242,10 +242,10 @@
                     <label class="form-label" for="">Id telegram</label>
                     <input class="form-control" type="text" name="id_telegram" value="<?php echo $id_telegram;?> " required>
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label class="form-label" for="">foto</label>
                     <input class="form-control" type="text" name="foto" value="<?php echo $foto;?>" required>
-                  </div>
+                  </div> -->
 
                   <div class="form-group text-right">
                   <a class='btn btn-sm btn-warning mx-1' href="index.php">Cancel</a>

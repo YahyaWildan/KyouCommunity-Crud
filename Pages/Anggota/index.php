@@ -203,7 +203,7 @@ include('../../Backend/Anggota/showAnggota.php');
                   <thead class="text-center">
                     <tr>
                       <th>No</th>
-                      <th>foto</th>
+                      <!-- <th>foto</th> -->
                       <th>Nama</th>
                       <th>Username</th>
                       <th>Email</th>
@@ -221,7 +221,7 @@ include('../../Backend/Anggota/showAnggota.php');
                       $action = $btnEdit . $btnDelete;
                       echo "<tr class='text-center'>";
                       echo "<td>" . ucwords($idx) . "</td>";
-                      echo "<td>" . ucwords($anggota['foto']) . "</td>";
+                      // echo "<td>" . ucwords($anggota['foto']) . "</td>";
                       echo "<td>" . ucwords($anggota['nama_lengkap']) . "</td>";
                       echo "<td>" . ucwords($anggota['username']) . "</td>";
                       echo "<td>" . $anggota['email'] . "</td>";
